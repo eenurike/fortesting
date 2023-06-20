@@ -21,3 +21,11 @@ main {
   flex-grow: 1;
 }
 
+img {
+  width: 100%;
+  max-width: 500px;
+}
+
+img + a {
+  display: block;
+}

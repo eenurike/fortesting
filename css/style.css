@@ -1,7 +1,7 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 html,
@@ -73,8 +73,84 @@ img {
 
 .forSticky {
   position: sticky;
-  /* top: 0; */
+  top: 0;
   background-color: grey;
+}
+
+.testZindex {
+  background-color: grey;
+  height: 250px;
+  padding: 20px;
+  position: relative;
+}
+
+.zindexBox:nth-child(1) {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(96, 209, 96);
+  z-index: 1;
+}
+
+.zindexBox:nth-child(2) {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(212, 168, 86);
+  /* background-color: inherit; */
+  z-index: 3;
+}
+
+.zindexBox:nth-child(3) {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(219, 104, 104);
+  z-index: 2;
+}
+
+.zindexBox:nth-child(2)::after {
+  content: "4";
+  /* position: absolute; */
+  /* top: 10px; */
+  /* left: 10px; */
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin-top: -10px;
+  margin-left: 10px;
+  background-color: pink;
+}
+
+.visibleChanges {
+  padding: 20px 0;
+  display: flex;
+  gap: 60px;
+}
+
+.boxSizing {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border: 5px solid black;
+  padding: 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.transform {
+  width: 150px;
+  height: 150px;
+  background-color: salmon;
+  transition: all 1s ease 0s;
+}
+
+.transform:hover {
+  transform: translateX(30px);
 }
 
 footer {

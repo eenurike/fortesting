@@ -1,7 +1,7 @@
 * {
   padding: 0;
   margin: 0;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 html,
@@ -150,8 +150,34 @@ img {
 }
 
 .transform:hover {
-  transform: translateX(30px);
+  /* transform: translateX(30px);
+  border-radius: 10%;
+  padding-top: 20px; */
+  /* transform: rotate(70deg); */
+  /* transform: scale(0.9); */
+  transform: skew(0, 10deg);
 }
+
+.testingFlexBox { 
+  display: flex;
+  justify-content: center;
+  
+}
+
+.testingFlexBox div {
+  width: 100px;
+  height: 70px;
+  border: 1px solid white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: brown;
+
+}
+
+
 
 footer {
   height: 200px;

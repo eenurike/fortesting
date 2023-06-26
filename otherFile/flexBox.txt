@@ -1,0 +1,18 @@
+<div class="testingFlexBox">    
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+</div>
+
+.testingFlexBox { 
+  display: flex;
+  justify-content: выравнивание элементов по горизонтали 
+    flex-start; элементы вначале колонки
+    flex-end; элементы вконце колонки  
+    center; в центре
+    space-between; первый и последний элемент максимально прижаты по краям, а отступы между элементами    распределяются равномерно
+    space-around; отступы от краев половина от отступов между элементами
+    space-evenly; отступы одинаковые везде
+                   
+}

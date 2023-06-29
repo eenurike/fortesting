@@ -162,7 +162,7 @@ img {
   display: flex;
   /* justify-content: space-evenly; */
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   
   background-color: white;
   height: 500px;
@@ -181,8 +181,20 @@ img {
 
 }
 
+.testingFlexBox div:nth-child(1) {
+  order: 9;
+} 
+
 .testingFlexBox div:nth-child(2) {
-  height: 100px;
+  /* order: 1; */
+} 
+
+.testingFlexBox div:nth-child(3) {
+  /* order: 4; */
+} 
+
+.testingFlexBox div:nth-child(4) {
+  order: -1;
 } 
 
 

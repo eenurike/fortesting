@@ -162,16 +162,21 @@ img {
   display: flex;
   /* justify-content: space-evenly; */
   /* align-items: center; */
-  flex-direction: row;
-  flex-wrap: wrap;
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
+  flex-flow: row wrap;
+  /* align-items: flex-start; */
+  align-content: stretch;
+  gap: 10px;
   
   background-color: white;
   height: 500px;
+  /* padding: 50px 0; */
 }
 
 .testingFlexBox div {
   width: 100px;
-  height: 70px;
+  /* height: 70px; */
   border: 1px solid white;
 
   display: flex;

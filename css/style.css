@@ -226,6 +226,34 @@ img {
   border: 1px solid black;
 }
 
+.flexibility {
+  max-width: 1000px;
+  height: 1000px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* flex-direction: column; */
+  color: white;
+  margin: 0 auto;
+}
+
+.box1 {
+  flex-basis: auto;
+  width: 400px;
+  height: 300px;
+}
+
+.box1:nth-child(1) {
+  background-color: orange;
+  flex-shrink: 1;
+}
+
+.box1:nth-child(2) {
+  background-color: black;
+  flex-shrink: 1.5;
+}
+
 footer {
   height: 200px;
   background-color: rgb(148, 148, 75);

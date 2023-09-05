@@ -1,260 +1,257 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 html,
 body {
-  font-family: sans-serif;
-  height: 100vh;
-  background-color: pink;
+	font-family: sans-serif;
+	height: 100vh;
+	background-color: pink;
 }
 
 body {
-  display: flex;
-  flex-direction: column;  
-  /* height: 100%; */
-  height: 1500px;
+	display: flex;
+	flex-direction: column;
+	/* height: 100%; */
+	height: 1500px;
 }
 
 header {
-  margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 main {
-  flex-grow: 1;
-  margin-top: 10px;
+	flex-grow: 1;
+	margin-top: 10px;
 }
 
 img {
-  width: 100%;
-  max-width: 500px;
+	width: 100%;
+	max-width: 500px;
 }
 
-.link a{
-  color: grey;
-  margin: 0 auto;
+.link a {
+	color: grey;
+	margin: 0 auto;
 }
 
 .box {
-  width: 320px;
-  height: 240px;
+	width: 320px;
+	height: 240px;
 
-  /* position: relative; */
-  display: flex;
-  /* padding: 5px; */
+	/* position: relative; */
+	display: flex;
+	/* padding: 5px; */
 
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 2%;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 2%;
 }
 
 .smallBox {
-  background-color: rgb(216, 93, 93);
-  flex-grow: 1;
-  margin: 1px 3px;
+	background-color: rgb(216, 93, 93);
+	flex-grow: 1;
+	margin: 1px 3px;
 }
 
 .box2 {
-  /* width: 50px; */
-  height: 50px;
-  display: inline-block;
-  padding: 5px;
-  background-color: orange;
-  position: absolute;
-  top: 0;
-  right: 0;
+	/* width: 50px; */
+	height: 50px;
+	display: inline-block;
+	padding: 5px;
+	background-color: orange;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
 .test {
-  /* padding: 20px 0;   */
+	/* padding: 20px 0;   */
 }
 
 .forSticky {
-  position: sticky;
-  top: 0;
-  background-color: grey;
+	position: sticky;
+	top: 0;
+	background-color: grey;
 }
 
 .testZindex {
-  background-color: grey;
-  height: 250px;
-  padding: 20px;
-  position: relative;
+	background-color: grey;
+	height: 250px;
+	padding: 20px;
+	position: relative;
 }
 
 .zindexBox:nth-child(1) {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-color: rgb(96, 209, 96);
-  z-index: 1;
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background-color: rgb(96, 209, 96);
+	z-index: 1;
 }
 
 .zindexBox:nth-child(2) {
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  width: 100px;
-  height: 100px;
-  background-color: rgb(212, 168, 86);
-  /* background-color: inherit; */
-  z-index: 3;
+	position: absolute;
+	top: 40px;
+	left: 40px;
+	width: 100px;
+	height: 100px;
+	background-color: rgb(212, 168, 86);
+	/* background-color: inherit; */
+	z-index: 3;
 }
 
 .zindexBox:nth-child(3) {
-  position: absolute;
-  left: 30px;
-  top: 30px;
-  width: 100px;
-  height: 100px;
-  background-color: rgb(219, 104, 104);
-  z-index: 2;
+	position: absolute;
+	left: 30px;
+	top: 30px;
+	width: 100px;
+	height: 100px;
+	background-color: rgb(219, 104, 104);
+	z-index: 2;
 }
 
 .zindexBox:nth-child(2)::after {
-  content: "4";
-  /* position: absolute; */
-  /* top: 10px; */
-  /* left: 10px; */
-  display: block;
-  width: 100px;
-  height: 100px;
-  margin-top: -10px;
-  margin-left: 10px;
-  background-color: pink;
+	content: '4';
+	/* position: absolute; */
+	/* top: 10px; */
+	/* left: 10px; */
+	display: block;
+	width: 100px;
+	height: 100px;
+	margin-top: -10px;
+	margin-left: 10px;
+	background-color: pink;
 }
 
 .visibleChanges {
-  padding: 20px 0;
-  display: flex;
-  gap: 60px;
+	padding: 20px 0;
+	display: flex;
+	gap: 60px;
 }
 
 .boxSizing {
-  width: 200px;
-  height: 200px;
-  background-color: white;
-  border: 5px solid black;
-  padding: 5px;
-  box-sizing: border-box;
-  overflow: hidden;
+	width: 200px;
+	height: 200px;
+	background-color: white;
+	border: 5px solid black;
+	padding: 5px;
+	box-sizing: border-box;
+	overflow: hidden;
 }
 
 .transform {
-  width: 150px;
-  height: 150px;
-  background-color: salmon;
-  transition: all 1s ease 0s;
+	width: 150px;
+	height: 150px;
+	background-color: salmon;
+	transition: all 1s ease 0s;
 }
 
 .transform:hover {
-  /* transform: translateX(30px);
+	/* transform: translateX(30px);
   border-radius: 10%;
   padding-top: 20px; */
-  /* transform: rotate(70deg); */
-  /* transform: scale(0.9); */
-  transform: skew(0, 10deg);
+	/* transform: rotate(70deg); */
+	/* transform: scale(0.9); */
+	transform: skew(0, 10deg);
 }
 
-.testingFlexBox { 
-  display: flex;
-  /* justify-content: space-evenly; */
-  /* align-items: center; */
-  /* flex-direction: row; */
-  /* flex-wrap: wrap; */
-  flex-flow: row wrap;
-  /* align-items: flex-start; */
-  align-content: stretch;
-  gap: 10px;
-  
-  background-color: white;
-  height: 500px;
-  /* padding: 50px 0; */
+.testingFlexBox {
+	display: flex;
+	/* justify-content: space-evenly; */
+	/* align-items: center; */
+	/* flex-direction: row; */
+	/* flex-wrap: wrap; */
+	flex-flow: row wrap;
+	/* align-items: flex-start; */
+	align-content: stretch;
+	gap: 10px;
+
+	background-color: white;
+	height: 500px;
+	/* padding: 50px 0; */
 }
 
 .testingFlexBox div {
-  width: 100px;
-  /* height: 70px; */
-  border: 1px solid white;
+	width: 100px;
+	/* height: 70px; */
+	border: 1px solid white;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-  background-color: brown;
-
+	background-color: brown;
 }
 
 .testingFlexBox div:nth-child(1),
 .testingFlexBox div:nth-child(4) {
-
-  /* align-self: flex-start; */
-} 
-
-.testingFlexBox div:nth-child(2) {
-  /* order: 1; */
-} 
-
-.testingFlexBox div:nth-child(3) {
-  /* order: 4; */
-} 
-
-.testingFlexBox div:nth-child(4) {
-  /* order: -1; */
-} 
-
-.grid:not(.grid:nth-child(2)) {
-  background-color: grey;
+	/* align-self: flex-start; */
 }
 
+.testingFlexBox div:nth-child(2) {
+	/* order: 1; */
+}
+
+.testingFlexBox div:nth-child(3) {
+	/* order: 4; */
+}
+
+.testingFlexBox div:nth-child(4) {
+	/* order: -1; */
+}
+
+.grid:not(.grid:nth-child(2)) {
+	background-color: grey;
+}
 
 .grid,
 .flex,
 .grid-box {
-  display: flex;
+	display: flex;
 }
 
 .grid:nth-child(2) {
-  flex-direction: column;
+	flex-direction: column;
 }
 
 .inner-box {
-  background-color: #fff;
-  border-radius: 3px;
-  border: 1px solid black;
+	background-color: #fff;
+	border-radius: 3px;
+	border: 1px solid black;
 }
 
 .flexibility {
-  max-width: 1000px;
-  height: 1000px;
-  border: 1px solid black;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  /* flex-direction: column; */
-  color: white;
-  margin: 0 auto;
+	max-width: 1000px;
+	height: 1000px;
+	border: 1px solid black;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	/* flex-direction: column; */
+	color: white;
+	margin: 0 auto;
 }
 
 .box1 {
-  flex-basis: auto;
-  width: 400px;
-  height: 300px;
+	flex-basis: auto;
+	width: 400px;
+	height: 300px;
 }
 
 .box1:nth-child(1) {
-  background-color: orange;
-  flex-shrink: 1;
+	background-color: orange;
+	flex-shrink: 1;
 }
 
 .box1:nth-child(2) {
-  background-color: black;
-  flex-shrink: 1.5;
+	background-color: black;
+	flex-shrink: 1.5;
 }
 
 footer {
-  height: 200px;
-  background-color: rgb(148, 148, 75);
+	height: 200px;
+	background-color: rgb(148, 148, 75);
 }

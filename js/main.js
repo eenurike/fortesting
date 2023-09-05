@@ -1,6 +1,6 @@
 const obj = {
-  a: '123',
-  b: 'abc'
+	a: '123',
+	b: 'abc',
 };
 
 console.log(obj['a']);

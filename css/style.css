@@ -255,3 +255,8 @@ footer {
 	height: 200px;
 	background-color: rgb(148, 148, 75);
 }
+
+.blockingBlock {
+	width: 350px;
+	max-width: 100%;
+}

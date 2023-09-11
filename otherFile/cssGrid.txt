@@ -1,0 +1,34 @@
+Допустим у нас такая структура 
+
+<div class="box">
+	<div class="item">Lorem</div>
+	<div class="item">Lorem, ipsum.</div>
+	<div class="item">Lorem, ipsum dolor.</div>
+	<div class="item">Lorem</div>
+	<div class="item">Lorem, ipsum.</div>
+	<div class="item">Lorem, ipsum dolor.</div>
+	<div class="item">Lorem</div>
+	<div class="item">Lorem, ipsum.</div>
+	<div class="item">Lorem, ipsum dolor.</div>
+	<div class="item">Lorem</div>
+	<div class="item">Lorem, ipsum.</div>
+	<div class="item">Lorem, ipsum dolor.</div>
+	<div class="item">Lorem</div>
+	<div class="item">Lorem, ipsum.</div>
+	<div class="item">Lorem, ipsum dolor.</div>
+</div>
+
+.box {
+	display: grid;
+	grid-template-columns: 200px 15% 2rem auto;	Говорим что у родителя box будет 4 колонки, одна 200px 	вторая 15% и т.д., кол-во колонок задаешь сколько угодно, и единицы измерения тоже любые 
+		auto; Автоматически растягивается на оставшееся пространство 
+
+	auto auto auto auto; Но это не значит что все 4 колонки будут равной ширины, то есть будет высчитываться в зависимости от контента внутри
+
+	1fr 1fr 1fr 1fr; Вот теперь колонки поделятся на равные части. fr - фракция, то есть одна фракция будет равно 25%
+	1fr 2fr 1fr; Поделит на 3 колонки, но вторая колонка будет занимать 2 части то есть 50%
+	repeat(6, 1fr); Писать 6 раз 1fr долго, так что есть такая функция и она работает с любыми единицами измерения
+
+	grid-template-rows: 30% 1fr;
+
+}

@@ -32,3 +32,5 @@
 	grid-template-rows: 30% 1fr;
 
 }
+
+посмотри функции minmax, auto-fill, auto-fit

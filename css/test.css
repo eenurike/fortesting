@@ -117,3 +117,67 @@ button {
 	justify-content: center;
 	align-items: center;
 }
+
+.grid__box {
+	margin: 0 20px;
+	background-color: grey;
+	/* height: 50vw; */
+	display: grid;
+	/* grid-template-columns: repeat(auto-fill, 100px); */
+	/* grid-template-columns: repeat(4, 1fr); */
+	/* grid-template-columns: 1fr, 1fr, 1fr, (auto-fill, 100px); */
+	/* grid-template-columns: minmax(500px, 1fr) minmax(500px, 1fr); */
+	grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+	gap: 10px;
+	padding: 20px;
+}
+
+.grid__box-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* width: 100px; */
+	height: 100px;
+	background-color: #fff;
+}
+
+.testingViewport {
+	background-color: #befaa6;
+	/* padding: 10px 0; */
+	/* background-color: white; */
+}
+
+.testingViewport .container {
+	max-width: 1200px;
+	margin: 0 auto;
+	/* background-color: orange; */
+	padding: 10px 0;
+	border: 1px solid black;
+}
+
+.testingViewport p {
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 5px 10px;
+
+	margin: 10px;
+
+	/* font-size: 1.37vw; */
+	font-size: clamp(20px, 3.5vmin, 32px);
+}
+
+.testingViewport p:nth-child(2) {
+	color: rgb(171, 171, 171);
+	border-color: rgb(171, 171, 171);
+}
+
+.block {
+	height: 100vh;
+	background-color: orange;
+}
+
+.bgBlock {
+	background-color: rgb(132, 132, 237);
+	width: 80vmin;
+	height: 30vh;
+}

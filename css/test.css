@@ -5,7 +5,7 @@
 }
 
 .container {
-	max-width: 1200px;
+	max-width: 1000px;
 	margin: 0 auto;
 	padding: 0 clamp(5px, 1.08vw, 20px);
 	padding-bottom: 1.08vw;
@@ -33,4 +33,31 @@
 	background-color: #fff;
 	margin: 0 auto;
 	margin-top: 0.63em;
+}
+
+.container2 {
+	max-width: 1000px;
+	margin: 0 auto;
+	background-color: rgb(161, 161, 233);
+	/* border: 2px solid black; */
+}
+
+.test {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+.block {
+	width: clamp(150px, 32.552vw, 400px);
+	border: 1px solid black;
+}
+.img {
+	margin: 0 auto;
+	max-width: 200px;
+	height: 200px;
+	background-color: rgb(199, 166, 105);
+}
+.text {
+	text-align: center;
 }

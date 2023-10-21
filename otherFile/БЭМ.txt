@@ -1,0 +1,29 @@
+БЭМ - Блок Элемент Модификатор
+
+<div class="user-cart">	БЛОК
+	<div class="user-cart__image"></div>	ЭЛЕМЕНТ
+	<div class="user-cart__user-name"></div>		ЭЛЕМЕНТ
+	<div class="user-cart__desc user-cart__desc--color-green"></div>		ЭЛЕМЕНТ И МОДИФИКАТОР
+		Добавили класс user-cart__desc--color-green, то есть если мы захотим через JS навесить обработчик событий на этот блок, например при клике на этот блок он меняет цвет на зеленый цвет.
+		Можно модификатор прописать через user-cart__desc_color-green через одно нижнее подчеркивание, но думаю через два тире удобнее
+</div>
+
+<div class="line">
+	<div class="line__col">
+		<div class="line__title">
+			Мы не пишем line__col__title, так как line__col это ЭЛЕМЕНТ, а line это БЛОК
+		</div>
+		<div class="line__text">
+			<div class="line__text-item">
+				А это уже ЭЛЕМЕНТ именно line__text
+			</div>
+			<div class="line__text-item"></div>
+			<div class="line__text-item">
+				<div class="social">	Внутри БЛОКА может находится другой БЛОК, например хочешь какой-то блок дублировать и вставить сюда
+					<div class="social__item"></div>
+					<div class="social__item"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

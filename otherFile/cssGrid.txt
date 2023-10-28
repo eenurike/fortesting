@@ -25,7 +25,10 @@
 			auto; Автоматически растягивается на оставшееся пространство 
 
 		auto auto auto auto; 
-			Но это не значит что все 4 колонки будут равной ширины, то есть будет высчитываться в зависимости от контента внутри
+			Но это не значит что все 4 колонки будут равной ширины, то есть будет высчитываться в зависимости от контента внутри. Элементы займут столько сколько им необходимо по контенту внутри
+
+		1fr fit-content(400px) 1fr;
+			Функция fit-content это	максимальное значение которое может достигать эта колонка, то есть если контента мало, колонка будет занимать место по контенту, но когда контента станет много, размер не будет больше 400px
 
 		1fr 1fr 1fr 1fr; 
 			Вот теперь колонки поделятся на равные части. fr - фракция, то есть одна фракция будет равно 25%
@@ -51,6 +54,156 @@
 
 		subgrid; Подсетка, полезное свойство имей ввиду его и изучи, пока работает в 60% браузерах
 
-	grid-template-rows: 30% 1fr;
+	grid-template-rows: 30% 1fr auto;	
+		Так соответственно создаем строки
 
+	Или такая же запись этих двух свойства
+	grid-template: auto auto / repeat(2, 1fr);	rows / column
+}
+
+
+<div class= "grid">
+	<div class= "grid__item--header"></div>
+	<div class= "grid__item--main"></div>
+	<div class= "grid__item--aside"></div>
+	<div class= "grid__item--footer"></div>
+</div>
+
+.grid {
+	display: grid;
+	grid-template: 1fr 5fr 2fr / 1fr 300px;
+	grid-template-areas: Прописываем как бы структуру
+	"header header"	header будет занимать две колонки, и одну строку
+	"	main 	aside	"	main будет занимать одну колонку и одну строку, aside тоже самое
+	"footer	footer"	footer будет занимать две колонки и одну строку
+
+	Записать эту запись короче так
+	grid-template:
+	"header header"	1fr	
+	"	main 	aside	"	5fr
+	"footer	footer"	2fr
+	/ 1fr 300px
+}
+
+.grid__item--header {
+	grid-area: header; Прописываем имя ячейки для структуры
+}
+.grid__item--main {
+	grid-area: main;
+}
+.grid__item--aide {
+	grid-area: aide;
+}
+.grid__item--footer {
+	grid-area: footer;
+}
+
+Неявная сетка
+
+<div class="gridBox">
+	<div class="gridBox__item">1</div>
+	<div class="gridBox__item">2</div>
+	<div class="gridBox__item">3</div>
+	<div class="gridBox__item">4</div>
+	<div class="gridBox__item">5</div>
+	<div class="gridBox__item">6</div>
+	<div class="gridBox__item">7</div>
+</div>
+
+.gridBox {
+	height: 100vh;
+	display: grid;
+	grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+}
+Допустим у нас 2 столбца и 3 колонки, 6 элементов поместились в нашу ЯВНУЮ сетку, но последний элемент перепрыгнул на другую строку(4-ую сроку), этот элемент уже в неявной сетке
+
+.gridBox {
+	height: 100vh;
+	display: grid;
+	grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+	grid-auto-rows: 300px/1fr;	Ну у нас явно элемент выбивается из сетки в строках, и прописываем этой строке размер
+	grid-auto-columns: auto;	Значение по умолчанию 
+}
+
+.gridBox {
+	height: 100vh;
+	display: grid;
+	grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+
+	Но если нам нужно чтоб этот неявный элемент стоял не в строке(row) а в колонке(column)
+	grid-auto-flow: column; Стандартное значение row
+	grid-auto-column: 300px;
+	И элемент переместился в 4-ую колонку
+}
+
+.gridBox {
+	height: 100vh;
+	display: grid;
+	grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+	grid-auto-rows: 300px;
+	grid-auto-flow: dense; Так он начинает заполнять пустые пространства в grid. Этот 7-ой элемент встанет туда где раньше стоял 6 элемент когда занимал одну ячейку
+}
+
+.gridBox__item:nth-child(6) {
+	grid-column: span 2;
+	6-ой элемент стал на две ячейки и после идет 7-ой элемент, и получается 6 элемент перепрыгнул на следующую строку, оставив пустое пространство в сетке
+}
+
+Перемещаем ячейки
+.gridBox__item:nth-child(3) {
+	grid-row-start: 2;	Наш третий элемент начинается со 2 линии по row
+	grid-row-end: 3;	А заканчивается на 3 линии по row
+	grid-column-start: 3;	Начинается с 3 линии по column
+	grid-column-end: 4;	Заканчивается на 4 линии по column
+	В итоге наш 3-ий элемент встал на последней ячейки
+
+	grid-column-start: 2;
+	grid-column-end: 4;
+	Элемент вообще занял две ячейки, и вытолкнул следующий элемент из явной сетки
+
+	Короткая запись
+	grid-row: 2 / 3;
+	grid-column: 2 / 4;
+
+	Так же можно перемещать элементы как в flex-box с помощью order
+}
+
+Так же можем задать имена этим линиям
+.gridBox {
+	height: 100vh;
+	display: grid;
+	grid-template:
+	[row1] 1fr [row2] 1fr [row3]	/
+	[col1] 1fr [col2] 1fr [col3] 1fr [col4];
+}
+
+Выравнивание элементов
+.gridBox {
+	display: grid;
+	grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+
+	justify-items: stretch;	Значение по умолчанию, то есть они растягиваются на все пространство отведенное им 
+                 start; Теперь контент внутри ячейки встал вначале по вертикале, и размер занимает по контенту
+								 end;
+								 center;
+	align-items: stretch;	Значение по умолчанию, и значения все те же самые но по горизонтали
+}
+
+.gridBox__item:nth-child(3) {
+	justify-self: stretch;
+	align-self: stretch;
+	Так чисто 3 элемент стал растягиваться на все пространство в ячейке
+}
+
+Отступы между ячейками
+.gridBox {
+	display: grid;
+	grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+
+	column-gap: 10px;	Отступ между колонками
+	row-gap: 5px;	Отступ между строками
+	Или
+	gap: 10px 5px;
+	Или
+	gap: 10px; Тогда отступы по 10px 
 }

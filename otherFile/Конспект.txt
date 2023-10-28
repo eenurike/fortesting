@@ -1,6 +1,4 @@
-<-- HTML -->
-
-
+README <-- HTML -->
 
 <a href="./index2.html" target="_black">Ссылка на другую страницу</a>
 Смотри когда указываем ./ идет поиск в этой папке, target говорит чтоб открыть ссылку в новом окне
@@ -28,23 +26,23 @@
 
 <picture>Сайт может открываться с разных устройств, и нам может понадобится загрузить изображение с меньшим размером</picture>
 <picture>
-	<source media="(max-width:1000px)" srcset="путь">	Так мы подгружаем другую увртинку, например с меньшим размером
-	<img src="путь" alt="Бла"
+ <source media="(max-width:1000px)" srcset="путь">	Так мы подгружаем другую увртинку, например с меньшим размером
+ <img src="путь" alt="Бла"
 </picture>
 
 <figure>
-	<img src="путь" alt="Бла">
-	<figcaption>Описание картинки</figcaption>	Данная структура позволяет семантически связать данный текст с данным изображением
+ <img src="путь" alt="Бла">
+ <figcaption>Описание картинки</figcaption>	Данная структура позволяет семантически связать данный текст с данным изображением
 </figure>
 
 <audio src="путь" controls>Атрибут controls добавляет стандартные для браузера кнопки управления play, stop и т.д.</audio>
 <video src="путь" width="480" controls></video>
 <video width="480" controls>
-	<source src="bla.webm" type="video/webm">
-	<source src="bla.mp4" type="video/mp4">
-		Короче, если браузер не поддерживает webm, то он загрузит mp4, а type это чтоб браузер быстрее определил формат видео
-	<p>УПС, БРАУЗЕР НЕ МОЖЕТ ЗАГРУЗИТЬ ВИДЕО</p>
-		А если браузер не загрузить и mp4, то покажет эту фразу
+ <source src="bla.webm" type="video/webm">
+ <source src="bla.mp4" type="video/mp4">
+  Короче, если браузер не поддерживает webm, то он загрузит mp4, а type это чтоб браузер быстрее определил формат видео
+ <p>УПС, БРАУЗЕР НЕ МОЖЕТ ЗАГРУЗИТЬ ВИДЕО</p>
+   А если браузер не загрузить и mp4, то покажет эту фразу
 </video>
 <audio src="путь" controls loop>Трек будет бесконечно проигрываться</audio>
 <audio src="путь" controls loop autoplay>При открытии страницы сразу воспроизводится звук, но сейчас этот атрибут не работает в браузерах ПРОВЕРЬ</audio>
@@ -64,40 +62,40 @@
 <button type="button" autofocus>button</button> При открытии сайта сразу указывает на эту кнопку, и ты можешь просто нажать ENTER и нажмется эта кнопка, например при открытии сайта выскакивает модальное окно с рекламой, на кнопку крестик(закрыть) вешаем этот атрибут, и при ENTER сразу окно закрывается
 <button type="button" disable>button</button> кнопка становится не активной, просто серая 
 
-
-Данный хранятся в табличной форме
+Данные хранятся в табличной форме
 <table>	
-	<caption>	Это первая таблица</caption>	Заголовок
-	<thead>	Это для семантики, шапка таблицы
-		<tr>
-			<th>ШАПКА</th>	table head шапка, выделяется жирным текстом 
-			<th>ШАПКА</th>
-		</tr>
-	</thead>
-	<tbody>	Table body, для семантики тело таблицы
-		<tr>	table row строчка
-			<td rowspan="2'>текст</td>	table data ячейка, и объединяет две ячейки
-			<td>текст</td>
-			<td>текст</td>
-			<td>текст</td>
-		</tr>
-		<tr>	
-			<td>текст</td>	Так как наверху объединяет две ячейки, то отсюда нужно удалить лишнюю
-			<td>текст</td>
-			<td>текст</td>
-			<td>текст</td>
-		</tr>
-	</tbody>
-	<tfoot> Table foot семантика низа для таблицы
-		<tr>
-			<td colspan="2">Футер</td> colspan он объединяет две ячейки
-		</tr>
-	</tfoot>
+ <caption> Это первая таблица</caption>	Заголовок
+ <thead> Это для семантики, шапка таблицы
+  <tr>
+   <th>ШАПКА</th> table head шапка, выделяется жирным текстом 
+   <th>ШАПКА</th>
+  </tr>
+ </thead>
+ <tbody> Table body, для семантики тело таблицы
+  <tr> table row строчка
+   <td rowspan="2'>текст</td>	table data ячейка, и объединяет две ячейки
+   <td>текст</td>
+   <td>текст</td>
+   <td>текст</td>
+  </tr>
+  <tr>	
+   <td>текст</td> Так как наверху объединяет две ячейки, то отсюда нужно удалить лишнюю
+   <td>текст</td>
+   <td>текст</td>
+   <td>текст</td>
+  </tr>
+ </tbody>
+<tfoot> Table foot семантика низа для таблицы
+ <tr>
+  <td colspan="2">Футер</td> colspan он объединяет две ячейки
+ </tr>
+</tfoot>
 </table>
 
 td {
-	border: 1px solid black;
+ border: 1px solid black;
 }
+
 
 
 <form	action="помещается путь к скрипту который будет обрабатывать эту форму"
@@ -191,7 +189,7 @@ td {
 </form>
 
 
-<-- CSS -->
+README <-- CSS -->
 
 
 box-shadow: 0 0 0 5px red, 0 0 0 10px yellow;	Тень можем задавать через запятую
@@ -433,9 +431,78 @@ ease - это вид анимации, разные виды анимации м
 И смотри чтоб плавность правильно работала, нужно transition прописывать на сам элемент, а не элемент с псевдокласс :hover
 transition: border-radius 3s, background-color 3s 3s; То есть сперва 3 секунды плавно меняется скругление потом через 3 секунды с такой же плавностью меняется цвет
 
+animation: name duration timing-function delay iteration-count direction fill-mode;
+name - имя анимации	(animation-name)
+duration - время анимации	(3s)
+timing-function - тип анимации	(linear посмотри другие типы анимаций)
+delay - задержка	(2s)
+iteration-count - кол-во анимаций	(4/infinite)
+direction - направление (alternate) Каждая четная итерация будет проигрываться обратно
+												 alternate-reverse В обратном направление будет
+												 normal Стандартное состояние
+fill-mode - какие свойства останутся у элемента после анимации (none/forward) 
+none - Элемент принимает свойства откуда начиналось то-есть с 0%/to. 
+forwards - Элемент принимает свойства которые были прописаны в конце 100%/from
+
+animation-play-state: pause/running; При клике или ховере можно останавливать анимацию
+animation-name: none; Можно так тоже остановить анимацию, но нюанс в том что элемент с анимацией будет возвращаться в исходное положение
+
+.animation__block {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100px;
+	height: 100px;
+	background-color: tomato;
+	animation: move-block 3s linear infinite alternate;
+}
+
+@keyframes move-block {
+	from {
+		left: 0;
+		transform: rotateY(360deg);
+	}
+
+	to {
+		left: calc(100% - 100px);
+		transform: rotateY(0deg);
+	}
+}
+
+ИЛИ с промежуточными значениями
+
+@keyframes move-block	{
+	0% {
+		left: 0;
+		transform: rotateY(360deg);
+	}
+
+	30% {
+		transform: scale(2);
+	}
+
+	70% {
+		transform: scale(1);
+	}
+
+	100% {
+		left: calc(100% - 100px);
+		transform: rotateY(0deg);
+	}
+}
+
+Несколько анимаций
+
+animation: move-block 3s linear infinite alternate,
+					 color-block 1s 3s forwards;
+
+@keyframes color-block	{
+	100% {
+		background-color: blue;
+	}
+}
 
 В background-image можно записать сразу несколько картинок
-
 background: url('https://picsum.photos/200/300') no-repeat 0 100%,	0 значение это позиционирование по вертикали(Х), 100% значение по горизонтали(Y) Картинка будет в левом нижнем углу
 		url('https://picsum.photos/id/10/200/300') no-repeat 100% 0;	Вторая картинка будет в правом верхнем углу
 		url('https://picsum.photos/id/10/200/300') no-repeat 100% 0 / contain;	Размер картинки прописываем через слэш(/)
@@ -527,8 +594,7 @@ p.text {
 
 
 
-<-- VSCODE -->
-
+README <-- VSCODE -->
 
 
 CTRL D горячие клавиши в vscode, ищет такое же искаемое слово

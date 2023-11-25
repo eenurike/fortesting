@@ -193,8 +193,9 @@ td {
 README <-- CSS -->
 
 
-box-shadow: 0 0 0 5px red, 0 0 0 10px yellow;	Тень можем задавать через запятую
+box-shadow: 0 0 0 5px red, 0 0 0 10px yellow; Тень можем задавать через запятую
 box-shadow: inset 0 0 0 5px red; Тень будет во внутрь
+box-shadow: 0 1em 1em -1em red; Можно и с минусом, тогда размер тень будет меньше чем элемент
 
 opacity: 0.5; Прозрачность
 
@@ -291,13 +292,36 @@ margin: 5px;
 
 
 position: absolute;
-Ты как бы берешь и выдераешь элемент с потока кода, и он болтается где хочет и никому мешать не будет и он не может работать без своего брата position: relative; но если просто прописать absolute, не задавая родителю relative, то этот элемент будет позиционироваться относительно body, так как у body по дефолту прописано свойство position: relative
+Ты как бы берешь и выдираешь элемент с потока кода, и он болтается где хочет и никому мешать не будет и он не может работать без своего брата position: relative; но если просто прописать absolute, не задавая родителю relative, то этот элемент будет позиционироваться относительно body, так как у body по дефолту прописано свойство position: relative
 position: sticky;
 Это как position: fixed; но за одним исключением, fixed он как absolute выпадает из потока кода, и как бы становится поверх всех всех блоков, и ездит со скролом, а sticky он остается на своем месте не выпадая, а когда только начинаешь скролить он выпадает и становится fixed. Обязательное условие чтоб было какое-то позиционирование например top: 0; и чтоб в html этот тег со свойством sticky не был единственным
-<div class="sticky">bla</div>         .sticky {
-<header></header>                       position: sticky;
-<main></main>                           top: 0;
-<footer></footer>                      }
+<body>
+ <section>
+  <nav class="nav_sticky">
+   <div class="wrapper">Навигация</div>
+  </nav>
+  <header>
+   <div class="wrapper">Хедер</div>
+  </header>
+  <main>
+   <div class="wrapper">Меин</div>
+  </main>
+  <footer>
+   <div class="wrapper">Футер</div>
+  </footer>
+ </section>
+</body>
+
+.wrapper {
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+.nav_sticky {
+  position: sticky;
+  top: 0;
+}
+
 То-есть теперь относительно header main footer наш блок sticky будет ездить
 
 
@@ -752,6 +776,7 @@ README <-- VSCODE -->
 
 
 CTRL + D горячие клавиши в vscode, ищет такое же искаемое слово
+CTRL + SHIFT + L выделяешь слово и он выделить все такие же слова
 
 END переместиться в конец строки 
 HOME переместиться в начало строки
